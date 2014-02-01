@@ -1,0 +1,8 @@
+.dialog {
+  position: relative;
+  @include prefixes(box-sizing, border-box);
+}
+  .dialog_close {
+    position: absolute;
+    z-index: 2000;
+  }

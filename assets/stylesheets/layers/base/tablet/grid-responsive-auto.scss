@@ -1,0 +1,77 @@
+@if $layout == "responsive" {
+
+  body {min-width: ($tablet-min-width + 20);}
+
+  .ctn {
+    min-width: $tablet-min-width;
+    max-width: $tablet-max-width;
+    width:     $tablet-ctn-width;
+  }
+
+  .visible-phone,
+  .hidden-tablet,
+  .visible-desktop {display: none !important;}
+
+  @if $responsive == "auto" {
+
+    //****************************************************************************************************
+    //
+    // .. GRID
+    //
+    //****************************************************************************************************
+    .grid {
+      &.__no-gutter {
+        margin-bottom: 0;
+        margin-left: 0;
+        > .grid-i[class*="grid-"] {
+          margin-bottom: 0;
+          margin-left: 0;
+        }
+        @for $i from 1 through 6 {
+          > .grid-i.__grid-#{$i} {width: 50%;}
+        }
+        @for $i from 7 through 12 {
+          > .grid-i.__grid-#{$i} {width: 100%;}
+        }
+      }
+      margin-bottom: -2%;
+      margin-left: -2%;
+      > .grid-i[class*="grid-"] {
+        margin-bottom: 2%;
+        margin-left: 2%;
+        
+      }
+      > .grid-i.__grid-1,
+      > .grid-i.__grid-2  {width: 14.666%;}
+      > .grid-i.__grid-3,
+      > .grid-i.__grid-4  {width: 31.333%;}
+      > .grid-i.__grid-5,
+      > .grid-i.__grid-6,
+      > .grid-i.__grid-7  {width: 48%;}
+      > .grid-i.__grid-8,  
+      > .grid-i.__grid-9  {width: 64.666%;}
+      > .grid-i.__grid-10,
+      > .grid-i.__grid-11 {width: 81.333%;}
+      > .grid-i.__grid-12 {width: 98%;}
+    }
+      
+    @for $i from 1 through 6 {
+      .grid-i.__grid-#{$i} {width: 50%;}
+    }
+    @for $i from 7 through 12 {
+      .grid-i.__grid-#{$i} {width: 100%;}
+    }
+
+
+
+    //****************************************************************************************************
+    //
+    // .. PREFIX, SUFFIX
+    //
+    //****************************************************************************************************
+    .grid-i[class*="__prefix-"] {margin-left: 0;}
+    .grid-i[class*="__suffix-"] {margin-right: 0;}
+  
+  }
+
+}

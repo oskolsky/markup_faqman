@@ -1,0 +1,100 @@
+html {height: 100%;}
+
+button, input, select, textarea,
+th, td { @include prefixes(box-sizing, border-box); }
+
+img {max-width: 100%;}
+img[width],
+img[height] {max-width: none;}
+
+figure > img {display: block;}
+
+
+
+//****************************************************************************************************
+//
+// .. PROPERTIES
+//
+//****************************************************************************************************
+//
+// .. Display
+//
+.d-n  {display: none;}
+.d-i  {display: inline;}
+.d-b  {display: block;}
+.d-ib {display: inline-block;}
+
+//
+// .. Float
+//
+.f-n {float: none;}
+.f-l {float: left;}
+.f-r {float: right;}
+
+//
+// .. Overflow
+//
+.o-n  {overflow: none;}
+.o-h  {overflow: hidden;}
+.ox-h {
+  -ms-overflow-x: hidden;
+      overflow-x: hidden;
+}
+.oy-h {
+  -ms-overflow-y: hidden;
+      overflow-y: hidden;
+}
+
+//
+// .. Position
+//
+.p-a {position: absolute;}
+.p-r {position: relative;}
+.p-f {position: fixed;}
+.p-s {position: static;}
+
+//
+// .. Visibility
+//
+.hidden  {visibility: hidden;}
+.visible {visibility: visible;}
+
+//
+// .. White-space, word-wrap
+//
+.nowrap  {white-space: nowrap;}
+.br-word {word-wrap: break-word;}
+
+
+
+//****************************************************************************************************
+//
+// .. HELPERS
+//
+//****************************************************************************************************
+//
+// .. Clearfix
+//
+.cf::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//
+// .. Block centering
+//
+.b-center {
+  display: block !important;
+  margin-left:  auto !important;
+  margin-right: auto !important;
+}
+
+//
+// .. Container
+//
+.ctn {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

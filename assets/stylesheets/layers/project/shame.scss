@@ -1,0 +1,49 @@
+//****************************************************************************************************
+//
+// .. PLUSO
+//
+//****************************************************************************************************
+.pluso {
+  padding: 0 !important;
+}
+.pluso-wrap {
+  padding: 0 !important;
+  position: relative !important;
+  top: .5rem !important;
+}
+.pluso-more {
+  display: none !important;
+}
+
+.header {
+  .pluso-wrap {
+    a {
+      background: url(/assets/images/icons/ico-social-s.png) no-repeat !important;
+      height: 23px !important;
+      margin: 0 .1rem !important;
+      width: 21px !important;
+      &.pluso-vkontakte {background-position: 0 0 !important;}
+      &.pluso-facebook  {background-position: -21px 0 !important;}
+      &.pluso-twitter   {background-position: -42px 0 !important;}
+    }
+  }
+}
+
+.footer {
+  .pluso {
+    margin-top: -.5rem;
+    vertical-align: top;
+  }
+  .pluso-wrap {
+    a {
+      background: url(/assets/images/icons/ico-social-l.png) no-repeat !important;
+      height: 54px !important;
+      margin: 0 .1rem !important;
+      width: 57px !important;
+      //vertical-align: top;
+      &.pluso-vkontakte {background-position: 0 0 !important;}
+      &.pluso-facebook  {background-position: -57px 0 !important;}
+      &.pluso-twitter   {background-position: -114px 0 !important;}
+    }
+  }
+}

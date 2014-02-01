@@ -1,0 +1,175 @@
+html {
+  @if $layout == "fixed" {font-size: $desktop-font-size;}
+  // .. font-size: $desktop-font-size; / $tablet-font-size; / $phone-font-size;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+body {
+  background:  $base-bg;
+  color:       $base-color;
+  font-family: $base-font-family;
+  font-size:   $base-font-size;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+  -webkit-backface-visibility: hidden; // .. http://goo.gl/bNpRD4
+}
+
+img {font-style: italic;}
+
+
+
+//****************************************************************************************************
+//
+// .. HEADINGS
+//
+//****************************************************************************************************
+h1, h2, h3, h4, h5, h6, .alpha, .beta, .gamma, .delta, .epsilon, .zeta {font-family: $h-font-family;}
+
+h1, .alpha {
+  font-size:   $h1-font-size;
+  font-weight: $h1-font-weight; 
+  line-height: $h1-line-height;
+}
+h2, .beta {
+  font-size:   $h2-font-size;
+  font-weight: $h2-font-weight;
+  line-height: $h2-line-height;
+}
+h3, .gamma {
+  font-size:   $h3-font-size;
+  font-weight: $h3-font-weight;
+  line-height: $h3-line-height;
+}
+h4, .delta {
+  font-size:   $h4-font-size;
+  font-weight: $h4-font-weight;
+  line-height: $h4-line-height;
+}
+h5, .epsilon {
+  font-size:   $h5-font-size;
+  font-weight: $h5-font-weight;
+  line-height: $h5-line-height;
+}
+h6, .zeta {
+  font-size:   $h6-font-size;
+  font-weight: $h6-font-weight;
+  line-height: $h6-line-height;
+}
+
+
+
+//****************************************************************************************************
+//
+// .. PROPERTIES
+//
+//****************************************************************************************************
+//
+// .. Cursors
+//
+.c-d {cursor: default;}
+.c-p {cursor: pointer;}
+
+//
+// .. Font-style
+//
+.fs-i {font-style: italic;}
+
+//
+// .. Font-weight
+//
+@for $i from 1 through 9 {
+  $i: $i * 100;
+  .fw-#{$i} {font-weight: $i;}
+}
+
+//
+// .. Vertical-align
+//
+.va-bl {vertical-align: baseline;}
+.va-t  {vertical-align: top;}
+.va-m  {vertical-align: middle !important;}
+.va-b  {vertical-align: bottom;}
+
+
+
+//****************************************************************************************************
+//
+// .. HELPERS
+//
+//****************************************************************************************************
+.round {border-radius: 50%;}
+
+.numbered {list-style: decimal outside;}
+
+//
+// .. Text
+//
+.tx {
+  &[class*="__col-"] { @include prefixes(column-gap, 2%); }
+  @for $i from 2 through 4 {
+    &.__col-#{$i} { @include prefixes(column-count, $i); }
+  }
+  @include media-query(tablet) {
+    @for $i from 2 through 4 {
+      &.__col-#{$i} { @include prefixes(column-count, $i - 1); }
+    }
+  }
+  @include media-query(phone) {
+    &.__col-2,
+    &.__col-3,
+    &.__col-4 { @include prefixes(column-count, 1); }
+  }
+
+  &.__lighten-25  {color: $tx-lighten-25;}
+  &.__lighten-33  {color: $tx-lighten-33;}
+  &.__lighten-50  {color: $tx-lighten-50;}
+  &.__lighten-66  {color: $tx-lighten-66;}
+  &.__lighten-75  {color: $tx-lighten-75;}
+  &.__lighten-100 {color: $tx-lighten-100;}
+
+  &.__darken-25  {color: $tx-darken-25;}
+  &.__darken-33  {color: $tx-darken-33;}
+  &.__darken-50  {color: $tx-darken-50;}
+  &.__darken-66  {color: $tx-darken-66;}
+  &.__darken-75  {color: $tx-darken-75;}
+  &.__darken-100 {color: $tx-darken-100;}
+
+  &.__xxs {
+    font-size: $tx-xxs;
+    line-height: $tx-xxs-line-height;
+  }
+  &.__xs {
+    font-size: $tx-xs;
+    line-height: $tx-xs-line-height;
+  }
+  &.__s {
+    font-size: $tx-s;
+    line-height: $tx-s-line-height;
+  }
+  &.__m {
+    font-size: $base-font-size;
+    line-height: $base-line-height
+  }
+  &.__l {
+    font-size: $tx-l;
+    line-height: $tx-l-line-height; 
+  }
+  &.__xl {
+    font-size: $tx-xl;
+    line-height: $tx-xl-line-height;
+  }
+  &.__xxl {
+    font-size: $tx-xxl;
+    line-height: $tx-xxl-line-height;
+  }
+
+  &.__left   {text-align: left;}
+  &.__center {text-align: center;}
+  &.__right  {text-align: right;}
+  
+  &.__transform-none {text-transform: none;}
+  &.__cap            {text-transform: capitalize;}
+  &.__lower          {text-transform: lowercase;}
+  &.__upper          {text-transform: uppercase;}
+}

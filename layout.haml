@@ -1,0 +1,19 @@
+!!!
+%html.no-js{lang: "ru-RU"}
+  %head
+    %title Faqademy
+    = haml 'views/layouts/_head'.to_sym
+    = haml 'views/layouts/_counters'.to_sym
+
+  %body
+    #loading-area{style: "display: none;"}
+      #top
+      = haml 'views/layouts/alerts/_ie'.to_sym
+      = haml 'views/layouts/alerts/_no-js'.to_sym
+      = haml 'views/layouts/_header'.to_sym
+
+      %main#main.main{role: "main"}
+        .ctn
+          = yield
+
+      = haml 'views/layouts/_footer'.to_sym

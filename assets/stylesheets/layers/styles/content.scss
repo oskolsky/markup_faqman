@@ -1,0 +1,218 @@
+//****************************************************************************************************
+//
+// .. INLINE
+//
+//****************************************************************************************************
+//
+// .. Links
+//
+@if $content-styles-links == true {
+  .cnt a        {color: $content-styles-links-color;}
+  .cnt a:hover  {color: $content-styles-links-color-hover;}
+  .cnt a:active {color: $content-styles-links-color-active;}
+}
+
+.cnt {
+  text-shadow: .1em .1em .1em rgba(0, 0, 0, .38);
+}
+
+//
+// .. Abbr, dfn
+//
+.ctn abbr[title],
+.ctn dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+//
+// .. Del, ins
+//
+.ctn del {text-decoration: line-through;}
+.ctn ins {
+  padding: 0 .3em;
+  background: #ff9;
+  text-decoration: none;
+}
+
+//
+// .. Mark
+//
+.ctn mark {
+  padding: 0 .3em;
+  background: #ff9;
+  font-style: italic;
+  font-weight: 700;
+}
+
+//
+// .. Quotes
+//
+.cnt q {
+  font-style: italic;
+  quotes: "\00ab" "\00bb";
+}
+.cnt q::before {content: open-quote;}
+.cnt q::after  {content: close-quote;}
+
+//
+// .. Small
+//
+.cnt small {
+  font-size: $base-font-size * .9;
+  font-weight: 700;
+}
+
+//
+// .. Sub, sup
+//
+.cnt sub,
+.cnt sup {
+  font-size: $base-font-size * .7;
+  line-height: 1;
+}
+.cnt sub {vertical-align: text-bottom;}
+.cnt sup {vertical-align: text-top;}
+
+
+
+//****************************************************************************************************
+//
+// .. BLOCK
+//
+//****************************************************************************************************
+.cnt > blockquote:not(:last-child),
+.cnt > h1:not(:last-child),
+.cnt > h2:not(:last-child),
+.cnt > h3:not(:last-child),
+.cnt > h4:not(:last-child),
+.cnt > h5:not(:last-child),
+.cnt > h6:not(:last-child),
+.cnt > dl:not(:last-child),
+.cnt > ol:not(:last-child),
+.cnt > ul:not(:last-child),
+.cnt > figure:not(:last-child),
+.cnt > img:not(:last-child),
+.cnt > p:not(:last-child),
+.cnt > pre:not(:last-child),
+.cnt > table:not(:last-child) {margin-bottom: #{$content-styles-factor}rem;}
+
+//
+// .. Blockquote
+//
+.cnt > blockquote {
+  padding: #{$content-styles-factor - .1}rem #{$content-styles-factor}rem;
+  border: .1rem solid #eee;
+  font-style: italic;
+  font-size: $base-font-size * 1.33;
+}
+
+//
+// .. Lists
+//
+.cnt > dl dl {margin-top: #{$content-styles-factor / 2}rem;}
+.cnt > dl dt {
+  margin-bottom: #{$content-styles-factor / 2}rem;
+  font-weight: 700;
+}
+.cnt > dl dd {margin-left: #{$content-styles-factor * 2}rem;}
+
+.cnt > ol       {list-style-type: decimal;}
+.cnt > ol ol    {list-style-type: lower-alpha;}
+.cnt > ol ol ol {list-style-type: lower-roman;}
+
+.cnt > ul       {list-style-type: disc;}
+.cnt > ul ul    {list-style-type: circle;}
+.cnt > ul ul ul {list-style-type: square;}
+
+.cnt > ol li,
+.cnt > ul li {margin: 0 0 #{$content-styles-factor / 2}rem #{$content-styles-factor * 2}rem;}
+
+.cnt > ol li ol,
+.cnt > ul li ul {margin-top: #{$content-styles-factor / 2}rem;}
+
+//
+// .. Headings
+//
+.cnt > h1:not(:first-child),
+.cnt > h2:not(:first-child),
+.cnt > h3:not(:first-child),
+.cnt > h4:not(:first-child),
+.cnt > h5:not(:first-child),
+.cnt > h6:not(:first-child) {margin-top: #{$content-styles-factor * 2}rem;}
+
+//
+// .. Figure
+//
+.cnt > figure > figcaption {
+  color: #999;
+  font-style: italic;
+}
+
+//
+// .. Images
+//
+.cnt img {vertical-align: top;}
+.cnt > img {display: block;}
+.cnt > p > img {
+  float: left;
+  margin-right: #{$content-styles-factor}rem;
+  @include media-query(tablet) {
+    float: left;
+    margin-right: #{$content-styles-factor}rem;
+  }
+  @include media-query(phone) {
+    float: none;
+    display: block;
+    margin-bottom: #{$content-styles-factor / 2}rem;
+  }
+}
+
+//
+// .. Paragraphs
+//
+.cnt > p::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+//
+// .. Pre > code
+//
+.cnt > pre {
+  padding: #{$content-styles-factor - .1}rem #{$content-styles-factor}rem;
+  background: #eee;
+  border: .1rem dotted #ccc;
+  white-space: normal;
+}
+.cnt > pre > code {
+  display: block;
+  padding: 0;
+  font-size: $base-font-size;
+  white-space: pre-wrap;
+}
+
+//
+// .. Table
+//
+.cnt > table {width: 100%;}
+
+.cnt > table caption,
+.cnt > table th,
+.cnt > table td {padding: #{$content-styles-factor / 2}rem #{$content-styles-factor}rem;}
+
+.cnt > table caption {
+  font-style: italic;
+  text-align: right;
+}
+.cnt > table th {
+  background: #ddd;
+  text-align: left;
+}
+.cnt > table th,
+.cnt > table tbody td {
+  border-bottom: .1rem solid #ccc;
+  padding-bottom: #{($content-styles-factor / 2) - .1}rem;
+}
+.cnt > table tfoot td {background: #eee;}

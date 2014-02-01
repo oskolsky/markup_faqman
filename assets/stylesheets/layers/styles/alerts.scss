@@ -1,0 +1,34 @@
+.alert {
+  padding: 2rem;
+  background: #ccc;
+  color: #fff;
+  text-align: center;
+
+  //
+  // .. Size
+  //
+  &.__narrow {
+    padding: 1rem;
+    .alert_close {
+      top: .5rem;
+      right: .5rem;
+    }
+  }
+  &.__wide {
+    padding: 3rem;
+    .alert_close {
+      top: 1.5rem;
+      right: 1.5rem;
+    }
+  }
+
+  //
+  // .. Type
+  //
+  &.__inline {border-radius: .6rem;}
+}
+  .alert_close {
+    cursor: pointer;
+    top: 1rem;
+    right: 1rem;
+  }

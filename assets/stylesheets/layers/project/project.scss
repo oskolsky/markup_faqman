@@ -1,0 +1,142 @@
+//****************************************************************************************************
+//
+// .. TO TOP
+//
+//****************************************************************************************************
+#top {
+  position: absolute;
+  top: 0;
+}
+
+
+
+//****************************************************************************************************
+//
+// .. HEADER
+//
+//****************************************************************************************************
+.header {
+  background: #343435;
+  padding: 2rem 0;
+  // .. &.__sticky / null / null
+}
+.header_home {
+  padding: .3rem 1.5rem .7rem;
+  background-color: #3e3e3f;
+  border-radius: .2em;
+  cursor: pointer;
+  font-family: $h-font-family;
+  font-size: $base-font-size;
+  font-weight: 300;
+  text-decoration: none;
+  text-shadow: .1em .1em .1em rgba(0, 0, 0, 0.45);
+  line-height: $base-line-height;
+  @include prefixes(box-sizing, border-box);
+  @include prefixes(transition, none);
+  &:hover {
+    background-color: #e4875a;
+    color: #fff;
+  }
+}
+
+//
+// .. Logo
+//
+.logo {
+  vertical-align: top;
+}
+
+
+
+//****************************************************************************************************
+//
+// .. MAIN
+//
+//****************************************************************************************************
+.main {
+
+}
+
+
+
+//****************************************************************************************************
+//
+// .. LAYERS
+//
+//****************************************************************************************************
+.cover {
+  margin-bottom: 2.5rem;
+}
+.layer {
+  margin-bottom: 1rem;
+  display: none;
+}
+.layer_frame {
+  vertical-align: top;
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+
+
+//****************************************************************************************************
+//
+// .. ALTERNATIVE
+//
+//****************************************************************************************************
+.alternative {
+  padding: 2rem 0 6rem;
+  display: none;
+}
+.alternative_t {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.alternative_i {
+  width: 398px;
+  height: 276px;
+  margin: 0 auto;
+}
+.alternative_i_a {
+
+}
+
+
+
+//****************************************************************************************************
+//
+// .. PLUSO SHARING
+//
+//****************************************************************************************************
+.pluso-title {
+  display: inline-block;
+  margin-right: .3rem;
+  position: relative;
+  top: .4rem;
+}
+
+
+
+//****************************************************************************************************
+//
+// .. FOOTER
+//
+//****************************************************************************************************
+.footer {
+  display: none;
+  padding-top: 2rem;
+  text-align: center;
+}
+.footer_nav {
+  margin-bottom: 12rem;
+}
+.footer_nav_i {
+  display: inline-block;
+  margin: 0 .5rem;
+}
+.footer_brand {
+  img {
+    vertical-align: top;
+  }
+}

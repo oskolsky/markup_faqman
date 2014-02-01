@@ -1,0 +1,6 @@
+.grid-i:not(td) {
+  display: inline-block;
+  vertical-align: top;
+  @include prefixes(box-sizing, border-box);
+  @include prefixes(transition, width .33s);
+}

@@ -1,0 +1,257 @@
+//****************************************************************************************************
+//
+// .. VARIABLES
+//
+//****************************************************************************************************
+//
+// .. Colors (flatuicolors.com)
+//
+$c-color-red:    #c0392b; // .. pomegranate
+$c-color-orange: #e67e22; // .. carrot
+$c-color-yellow: #f1c40f; // .. sun flower
+$c-color-green:  #27ae60; // .. nephritis
+$c-color-blue:   #2980b9; // .. belize hole
+$c-color-violet: #9b59b6; // .. amethyst
+$c-color-gray:   #95a5a6; // .. concrete
+$c-color-dark:   #2c3e50; // .. midnight blue
+
+
+
+//****************************************************************************************************
+//
+// .. BACKGROUNDS
+//
+//****************************************************************************************************
+.c-bg {
+  &.__red    {background-color: lighten($c-color-red,    25%);}
+  &.__orange {background-color: lighten($c-color-orange, 25%);}
+  &.__yellow {background-color: lighten($c-color-yellow, 25%);}
+  &.__green  {background-color: lighten($c-color-green,  25%);}
+  &.__blue   {background-color: lighten($c-color-blue,   25%);}
+  &.__violet {background-color: lighten($c-color-violet, 25%);}
+  &.__gray   {background-color: lighten($c-color-gray,   25%);}
+  &.__dark   {background-color: lighten($c-color-dark,   25%);}
+}
+
+
+
+//****************************************************************************************************
+//
+// .. BADGES
+//
+//****************************************************************************************************
+.c-badge {
+  padding: .1rem .6rem;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: .3rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .33);
+
+  &.__round  {border-radius: .9rem;}
+
+  &.__red    {background: $c-color-red;}
+  &.__orange {background: $c-color-orange;}
+  &.__yellow {background: $c-color-yellow;}
+  &.__green  {background: $c-color-green;}
+  &.__blue   {background: $c-color-blue;}
+  &.__violet {background: $c-color-violet;}
+  &.__gray   {background: $c-color-gray;}
+  &.__dark   {background: $c-color-dark;}
+}
+
+
+
+//****************************************************************************************************
+//
+// .. BREADCRUMBS
+//
+//****************************************************************************************************
+.c-border {
+  border-style: solid;
+  border-width: 1px;
+  &.__red    {border-color: lighten($c-color-red,    20%);}
+  &.__orange {border-color: lighten($c-color-orange, 20%);}
+  &.__yellow {border-color: lighten($c-color-yellow, 20%);}
+  &.__green  {border-color: lighten($c-color-green,  20%);}
+  &.__blue   {border-color: lighten($c-color-blue,   20%);}
+  &.__violet {border-color: lighten($c-color-violet, 20%);}
+  &.__gray   {border-color: lighten($c-color-gray,   20%);}
+  &.__dark   {border-color: lighten($c-color-dark,   20%);}
+}
+
+
+
+//****************************************************************************************************
+//
+// .. BREADCRUMBS
+//
+//****************************************************************************************************
+.c-breadcrumbs {font-size: 1.5rem;}
+  .c-breadcrumbs_i {
+    display: inline-block;
+    vertical-align: top;
+    color: #ccc;
+    &:not(:last-child) {
+      position: relative;
+      z-index: 1000;
+      margin-right: 2.5rem; 
+      &:after {
+        position: absolute;
+        right: -1.5rem;
+        content: "\f105";
+        font-family: "FontAwesome";
+      }
+    }
+  }
+    .c-breadcrumbs_a {color: #666;}
+
+
+
+//****************************************************************************************************
+//
+// .. BUTTONS
+//
+//****************************************************************************************************
+.c-form_button {
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, .33);
+  
+  &[disabled] {text-shadow: none;}
+
+  &:not([disabled]):hover {box-shadow: inset 0 0 .6em rgba(255, 255, 255, .33);}
+  
+  &.__small {
+    padding: .15rem .75rem;
+    font-size: 1.33rem;
+  }
+  &.__large {
+    padding: .6rem 3rem;
+    font-size: 2rem;
+  }
+
+  &.__red {
+    border-color: $c-color-red;
+    @include linear-gradient(vertical, #cc6055, #c0392b);
+    &:not([disabled]):active { @include linear-gradient(vertical, #c0392b, #cc6055); }
+  }
+
+  &.__orange {
+    border-color: $c-color-orange;
+    @include linear-gradient(vertical, #eb974e, #e67e22);
+    &:not([disabled]):active { @include linear-gradient(vertical, #e67e22, #eb974e); }
+  }
+
+  &.__yellow {
+    border-color: $c-color-yellow;
+    @include linear-gradient(vertical, #f3cf3f, #f1c40f);
+    &:not([disabled]):active { @include linear-gradient(vertical, #f1c40f, #f3cf3f); }
+  }
+
+  &.__green {
+    border-color: $c-color-green;
+    @include linear-gradient(vertical, #52be7f, #27ae60);
+    &:not([disabled]):active { @include linear-gradient(vertical, #27ae60, #52be7f); }
+  }
+
+  &.__blue {
+    border-color: $c-color-blue;
+    @include linear-gradient(vertical, #5399c7, #2980b9);
+    &:not([disabled]):active { @include linear-gradient(vertical, #2980b9, #5399c7); }
+  }
+
+  &.__violet {
+    border-color: $c-color-violet;
+    @include linear-gradient(vertical, #af7ac4, #9b59b6);
+    &:not([disabled]):active { @include linear-gradient(vertical, #9b59b6, #af7ac4); }
+  }
+
+  &.__gray {
+    border-color: $c-color-gray;
+    @include linear-gradient(vertical, #aab7b7, #95a5a6);
+    &:not([disabled]):active { @include linear-gradient(vertical, #95a5a6, #aab7b7); }
+  }
+
+  &.__dark {
+    border-color: $c-color-dark;
+    @include linear-gradient(vertical, #566473, #2c3e50);
+    &:not([disabled]):active { @include linear-gradient(vertical, #2c3e50, #566473); }
+  }
+}
+
+
+
+//****************************************************************************************************
+//
+// .. COLORS
+//
+//****************************************************************************************************
+.c-color {
+  &.__red    {color: $c-color-red;}
+  &.__orange {color: $c-color-orange;}
+  &.__yellow {color: $c-color-yellow;}
+  &.__green  {color: $c-color-green;}
+  &.__blue   {color: $c-color-blue;}
+  &.__violet {color: $c-color-violet;}
+  &.__gray   {color: $c-color-gray;}
+  &.__dark   {color: $c-color-dark;}
+}
+
+
+
+//****************************************************************************************************
+//
+// .. PAGINATION
+//
+//****************************************************************************************************
+.c-navigation {
+  font-size: 3rem;
+  text-align: center;
+}
+  .c-navigation_i {
+    display: inline-block;
+    vertical-align: top;
+  }
+    .c-navigation_a {
+      display: block;
+      padding: 1rem;
+      color: #333;
+      text-decoration: none;
+      &:hover,
+      &.__current {color: #ccc;}
+    }
+
+
+
+//****************************************************************************************************
+//
+// .. PAGINATION
+//
+//****************************************************************************************************
+.c-pagination {
+  font-size: 1.75rem;
+  text-align: center;
+}
+  .c-pagination_i {
+    display: inline-block;
+    vertical-align: top;
+  }
+    .c-pagination_a {
+      display: block;
+      padding: 0 1rem;
+      color: #333;
+      text-decoration: none;
+      &:hover,
+      &.__current {
+        background: #ccc;
+        color: #666;
+      }
+      &.__disabled {
+        background: none;
+        color: #ccc;
+        cursor: default;
+      }
+      &.__spacer {
+        background: none;
+        color: inherit;
+      }
+    }

@@ -1,0 +1,9 @@
+.dialog {
+  padding: 1.5rem 1rem;
+  border-style: solid;
+  border-width: 30px;
+  -webkit-border-image: url(/assets/images/border.png) 30 stretch;
+     -moz-border-image: url(/assets/images/border.png) 30 stretch;
+       -o-border-image: url(/assets/images/border.png) 30 stretch;
+          border-image: url(/assets/images/border.png) 30 fill stretch;
+}

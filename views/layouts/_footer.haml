@@ -1,0 +1,16 @@
+%footer#footer.footer{role: "contentinfo"}
+  .ctn
+    %nav.footer_nav
+      %ul
+        %li.footer_nav_i
+          .pluso{data: {background: "transparent", options: "small,square,line,horizontal,nocounter,theme=04", services: "vkontakte,facebook,twitter", user: "1317731644"}}
+        %li.footer_nav_i
+          %a{href: "#", class: "form_button __red", data: {dialog: "dialog-subscription"}} Продолжение следует...
+        %li.footer_nav_i
+          %a{href: "/", class: "form_button __blue"} Начать заново
+    .footer_brand
+      %a{href: "http://faqademy.com", data: {normal: "/assets/images/footer.png", hover: "/assets/images/footer_hover.png"}}
+        %img{src: "/assets/images/footer.png", width: "641", height: "245", alt: "Узнай больше о faqademy"}
+
+:javascript
+  (function() {if (window.pluso)if (typeof window.pluso.start == "function") return;if (window.ifpluso==undefined) { window.ifpluso = 1;var d = document, s = d.createElement('script'), g = 'getElementsByTagName';s.type = 'text/javascript'; s.charset='UTF-8'; s.async = true;s.src = ('https:' == window.location.protocol ? 'https' : 'http')  + '://share.pluso.ru/pluso-like.js';var h=d[g]('body')[0];h.appendChild(s);}})();

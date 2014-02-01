@@ -1,0 +1,33 @@
+//****************************************************************************************************
+//
+// .. ANIMATION
+//
+//****************************************************************************************************
+.rotate { @include prefixes(animation, rotate 1s); }
+
+
+
+//****************************************************************************************************
+//
+// .. KEYFRAMES
+//
+//****************************************************************************************************
+//
+// .. Rotate
+//
+@-webkit-keyframes rotate {
+  0%   { @include prefixes(transform, rotate(0deg)); }
+  100% { @include prefixes(transform, rotate(360deg)); }
+}
+@-moz-keyframes rotate {
+  0%   { @include prefixes(transform, rotate(0deg)); }
+  100% { @include prefixes(transform, rotate(360deg)); }
+}
+@-o-keyframes rotate {
+  0%   { @include prefixes(transform, rotate(0deg)); }
+  100% { @include prefixes(transform, rotate(360deg)); }
+}
+@keyframes rotate {
+  0%   { @include prefixes(transform, rotate(0deg)); }
+  100% { @include prefixes(transform, rotate(360deg)); }
+}

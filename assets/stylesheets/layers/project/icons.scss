@@ -1,0 +1,25 @@
+@mixin size($w, $h) {
+  width:  #{$w}px;
+  height: #{$h}px;
+}
+
+//****************************************************************************************************
+//
+// .. ICONS
+//
+//****************************************************************************************************
+.ico {
+  display: inline-block;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  &.__social {
+    &.__s {
+      @include size(21, 23);
+      background-image: url(/assets/images/icons/ico-social-s.png);
+    }
+    &.__l {
+      @include size(57, 54);
+      background-image: url(/assets/images/icons/ico-social-l.png);
+    }
+  }
+}

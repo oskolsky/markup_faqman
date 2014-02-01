@@ -1,0 +1,12 @@
+.dialog#dialog-subscription{style: "width: 575px;"}
+  %h1.tx.__center.m-b_3 Подпишись на новые серии комикса
+  %article.cnt.tx.__center.m-b_2
+    %p Наша история еще далека от&nbsp;завершения. В&nbsp;следующей серии нашего героя ждут самые настоящие испытания, сражение с&nbsp;суперзлодеем, спасение дамы сердца, много печенек и&nbsp;эпичный уход в&nbsp;закат.
+  %form.form.tx.__center{action: "http://cp.unisender.com/ru/subscribe?hash=5f8whtc5yd9hm9fw56jad6z4jzwpeqzsgfrt91jy", method: "post", onsubmit: "return us_.onSubmit(this);", us_mode: "embed"}
+    .form_row
+      %input{type: "text", class: "form_text", placeholder: "Напишите здесь ваш e-mail", style: "margin-bottom: .5rem; width: 390px;", autofocus: "autofocus", autocomplete: "off", _label: "E-mail", _required: "0", _validator: "email", name: "email", value: ""}
+    .form_row
+      %input{type: "submit", class: "form_button __red", style: "width: 390px;", value: "Подписаться"}
+      %input{type: "hidden", name: "charset", value: ""}
+      %input{type: "hidden", name: "default_list_id", value: "2638764"}
+      %input{type: "hidden", name: "overwrite", value: "2"}

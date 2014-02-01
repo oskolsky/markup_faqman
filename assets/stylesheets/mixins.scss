@@ -1,0 +1,39 @@
+@mixin media-query($media-query) {
+
+  @if $media-query == "phone" {
+    @media all and (max-width: ($phone-max-width + 20)) { @content; }
+  }
+
+  @if $media-query == "tablet" {
+    @media all and (min-width: ($tablet-min-width + 20 + 1)) and (max-width: ($tablet-max-width + 20)) { @content; }
+  }
+
+  @if $media-query == "desktop" {
+    @media all and (min-width: ($desktop-min-width + 20 + 1)) { @content; }
+  }
+
+}
+
+
+
+@mixin prefixes($property, $value) {
+  -webkit-#{$property}: $value;
+     -moz-#{$property}: $value;
+      -ms-#{$property}: $value;
+       -o-#{$property}: $value;
+          #{$property}: $value;
+}
+
+
+
+@mixin linear-gradient($direction, $start, $end) {
+  background: $start;
+  @if ($direction == "horizontal") {
+    background: -webkit-linear-gradient(left, $start 0%, $end 100%);
+    background:         linear-gradient(to right, $start 0%, $end 100%);
+  }
+  @else if ($direction == "vertical") {
+    background: -webkit-linear-gradient(top, $start 0%, $end 100%);
+    background:         linear-gradient(to bottom, $start 0%, $end 100%);
+  }
+}

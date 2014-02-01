@@ -1,0 +1,90 @@
+@mixin grid-fixed($classname, $property, $result, $important: "") {
+  @for $i from 1 through $column-qty {
+    $result: $result + $column-width + $column-gutter;
+    #{$classname}-#{$i} {
+      #{$property}: #{$result}px#{$important}; 
+    }
+  }
+}
+
+@if $layout == "fixed" {
+  
+  $width: ($column-width + $column-gutter) * $column-qty;
+
+  //****************************************************************************************************
+  //
+  // .. STYLES
+  //
+  //****************************************************************************************************
+  body {min-width: #{$width}px;}
+
+  .ctn {width: #{$width - $column-gutter}px;}
+
+  .visible-phone,
+  .visible-tablet,
+  .hidden-desktop {display: none !important;}
+
+
+
+  //****************************************************************************************************
+  //
+  // .. GRID
+  //
+  //****************************************************************************************************
+  .grid {
+    
+    &.__no-gutter {
+      width: #{$width}px;
+      margin-bottom: 0;
+      margin-left: -#{$column-gutter / 2}px;
+      > .grid-i[class*="__grid-"] {
+        margin-bottom: 0;
+        margin-left: 0;
+      }
+      @include grid-fixed("> .grid-i.__grid", "width", 0);
+    }
+
+    margin-bottom: -#{$column-gutter}px;
+    margin-left: -#{$column-gutter}px;
+    > .grid-i[class*="__grid-"] {
+      margin-bottom: #{$column-gutter}px;
+      margin-left: #{$column-gutter}px;
+    }
+  }
+
+  @include grid-fixed(".grid-i.__grid", "width", -$column-gutter);
+
+
+
+  //****************************************************************************************************
+  //
+  // .. PREFIX, SUFFIX
+  //
+  //****************************************************************************************************
+  //
+  // .. Prefix
+  //
+  .grid {
+    &.__no-gutter {
+      margin-bottom: 0;
+      margin-left: -#{$column-gutter / 2};
+      @include grid-fixed("> .grid-i.__prefix", "margin-left", 0, " !important");
+    }
+    @include grid-fixed(".grid-i.__prefix", "margin-left", $column-gutter, " !important");
+  }
+  @include grid-fixed(".grid-i.__prefix", "margin-left", 0);
+  
+  //
+  // .. Suffix
+  //
+  .grid {
+    &.__no-gutter {
+      margin-bottom: 0;
+      margin-left: -#{$column-gutter / 2};
+      @include grid-fixed("> .grid-i.__suffix", "margin-right", 0, " !important");
+    }
+    @include grid-fixed(".grid-i.__suffix", "margin-right", $column-gutter, " !important");
+  }
+  @include grid-fixed(".grid-i.__suffix", "margin-right", 0);
+  
+}
